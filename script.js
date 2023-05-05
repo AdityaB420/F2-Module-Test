@@ -1,10 +1,7 @@
 
 fetch('https://gist.githubusercontent.com/harsh3195/b441881e0020817b84e34d27ba448418/raw/c4fde6f42310987a54ae1bc3d9b8bfbafac15617/demo-json-data.json')
     .then(response => response.json())
-    .then(data => {
-
-        // insert data 
-const tbbody = document.getElementById("tb-body");
+    .then(data => {const tbbody = document.getElementById("tb-body");
 
 function printDataInHtml(element){
     
@@ -20,12 +17,7 @@ function printDataInHtml(element){
                  </tr>`;
     tbbody.innerHTML+=trdata;
 }
-
-
 data.forEach(element => { printDataInHtml(element);});
-
-// ========search Data===========
-
 const searchInput = document.getElementById("search");
     searchInput.addEventListener("input",()=>{
        const searchBoxValue = searchInput.value.toLowerCase();
@@ -41,10 +33,7 @@ const searchInput = document.getElementById("search");
         console.log(filterData)
     
     });
-
-// ===========sort data==============
 const maleTable = document.getElementById('male-table');
-
  const sortAtoZ = document.querySelector(".btn-1");
  const sortZtoA = document.querySelector(".btn-2");
  const sortMarks = document.querySelector(".btn-3");
@@ -116,8 +105,6 @@ function printDataInHtmlMale(element){
                  </tr>`;
     tbbodyMale.innerHTML+=trdata;
 }
-
-
 maleData.forEach(element => { printDataInHtmlMale(element);});
  });
   }).catch(error => console.error(error));
